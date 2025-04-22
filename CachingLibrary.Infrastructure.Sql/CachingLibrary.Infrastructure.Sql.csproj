@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- NuGet packaging settings -->
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IncludeSymbols>true</IncludeSymbols>
+		<IncludeSource>true</IncludeSource>
+
+		<!-- Metadata -->
+		<PackageId>CachingLibrary.Sql</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>YourNameHere</Authors>
+		<Company>YourCompany</Company>
+		<Description>SQL Server cache store implementation for CachingLibrary using Dapper and Microsoft.Data.SqlClient.</Description>
+		<PackageTags>cache;sqlserver;dapper;dotnet</PackageTags>
+		<RepositoryUrl>https://github.com/yourorg/CachingLibrary</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/yourorg/CachingLibrary</PackageProjectUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.1.66" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\CachingLibrary.Abstractions\CachingLibrary.Abstractions.csproj" />
+	</ItemGroup>
+
+</Project>

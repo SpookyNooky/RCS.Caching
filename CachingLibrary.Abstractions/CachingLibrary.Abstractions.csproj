@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IncludeSymbols>true</IncludeSymbols>
+		<IncludeSource>true</IncludeSource>
+
+		<!-- NuGet Metadata -->
+		<PackageId>CachingLibrary.Abstractions</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>YourNameHere</Authors>
+		<Company>YourCompany</Company>
+		<Description>Lightweight, pluggable caching abstractions for .NET applications.</Description>
+		<PackageTags>cache;caching;dotnet;redis;memory;sql;abstractions</PackageTags>
+		<RepositoryUrl>https://github.com/yourorg/CachingLibrary</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/yourorg/CachingLibrary</PackageProjectUrl>
+	</PropertyGroup>
+
+</Project>

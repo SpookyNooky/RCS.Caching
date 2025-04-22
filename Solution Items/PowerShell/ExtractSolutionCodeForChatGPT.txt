@@ -1,0 +1,1586 @@
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\Extensions\ServiceCollectionExtensions.cs
+
+using CachingLibrary.Abstractions.Interfaces;
+using CachingLibrary.Infrastructure.Sql.Stores;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.DependencyInjection;
+using System.Data;
+namespace CachingLibrary.Infrastructure.Sql.Extensions;
+
+
+
+
+public static class ServiceCollectionExtensions
+{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static IServiceCollection AddSqlCacheStore<TKey, TValue>(
+        this IServiceCollection services,
+        string connectionString)
+        where TKey : notnull
+    {
+        services.AddScoped<IDbConnection>(_ =>
+        {
+            var connection = new SqlConnection(connectionString);
+            connection.Open(); 
+            return connection;
+        });
+        services.AddScoped<ICacheStore<TKey, TValue>, SqlCacheStore<TKey, TValue>>();
+        return services;
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\obj\Debug\net8.0\CachingLibrary.Infrastructure.Sql.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("YourCompany")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("SQL Server cache store implementation for CachingLibrary using Dapper and Microso" +
+    "ft.Data.SqlClient.")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Infrastructure.Sql")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Infrastructure.Sql")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https:
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\obj\Debug\net8.0\CachingLibrary.Infrastructure.Sql.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v9.0", FrameworkDisplayName = ".NET 9.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\obj\Debug\net9.0\CachingLibrary.Infrastructure.Sql.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("CachingLibrary.Infrastructure.Sql")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Infrastructure.Sql")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Infrastructure.Sql")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\obj\Debug\net9.0\CachingLibrary.Infrastructure.Sql.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\obj\Release\net8.0\CachingLibrary.Infrastructure.Sql.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("YourCompany")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute(("SQL Server cache store implementation for CachingLibrary using Dapper and Microso" +
+    "ft.Data.SqlClient."))]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Infrastructure.Sql")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Infrastructure.Sql")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https:
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\obj\Release\net8.0\CachingLibrary.Infrastructure.Sql.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Sql\Stores\SqlCacheStore.cs
+
+using CachingLibrary.Abstractions.Interfaces;
+using Dapper;
+using System.Data;
+using System.Text.Json;
+namespace CachingLibrary.Infrastructure.Sql.Stores;
+
+
+
+
+
+
+
+
+
+
+public class SqlCacheStore<TKey, TValue>(IDbConnection connection) : ICacheStore<TKey, TValue>
+    where TKey : notnull
+{
+    
+    
+    
+    
+    
+    
+    
+    public async Task SetAsync(TKey key, TValue value, TimeSpan? ttl = null)
+    {
+        var now = DateTime.UtcNow;
+        var expiresOn = ttl.HasValue ? now.Add(ttl.Value) : (DateTime?)null;
+        const string sql = """
+            UPDATE dbo.CacheEntries
+            SET [Value] = @Value, ExpiresOn = @ExpiresOn
+            WHERE [Key] = @Key;
+            IF @@ROWCOUNT = 0
+            BEGIN
+                INSERT INTO dbo.CacheEntries ([Key], [Value], ExpiresOn)
+                VALUES (@Key, @Value, @ExpiresOn);
+            END
+        """;
+        await connection.ExecuteAsync(sql, new
+        {
+            Key = key.ToString(),
+            Value = JsonSerializer.Serialize(value),
+            ExpiresOn = expiresOn
+        });
+    }
+    
+    
+    
+    
+    
+    public Task<TValue?> GetAsync(TKey key) => GetAsync(key, useSnapshotHint: true);
+    
+    
+    
+    
+    
+    public Task<bool> RemoveAsync(TKey key) => RemoveAsync(key, useSnapshotHint: true);
+    
+    
+    
+    
+    
+    public Task<bool> ExistsAsync(TKey key) => ExistsAsync(key, useSnapshotHint: true);
+    
+    
+    
+    
+    
+    
+    public async Task<TValue?> GetAsync(TKey key, bool useSnapshotHint)
+    {
+        var hint = useSnapshotHint ? " WITH (SNAPSHOT)" : string.Empty;
+        var sql = $"""
+            SELECT [Value]
+            FROM dbo.CacheEntries{hint}
+            WHERE [Key] = @Key AND (ExpiresOn IS NULL OR ExpiresOn > GETUTCDATE());
+        """;
+        var result = await connection.QuerySingleOrDefaultAsync<string>(sql, new { Key = key.ToString() });
+        return result != null ? JsonSerializer.Deserialize<TValue>(result) : default;
+    }
+    
+    
+    
+    
+    
+    
+    public async Task<bool> RemoveAsync(TKey key, bool useSnapshotHint)
+    {
+        var hint = useSnapshotHint ? " WITH (SNAPSHOT)" : string.Empty;
+        var sql = $"""
+            DELETE FROM dbo.CacheEntries{hint}
+            WHERE [Key] = @Key;
+        """;
+        var affected = await connection.ExecuteAsync(sql, new { Key = key.ToString() });
+        return affected > 0;
+    }
+    
+    
+    
+    
+    
+    
+    public async Task<bool> ExistsAsync(TKey key, bool useSnapshotHint)
+    {
+        var hint = useSnapshotHint ? " WITH (SNAPSHOT)" : string.Empty;
+        var sql = $"""
+            SELECT 1
+            FROM dbo.CacheEntries{hint}
+            WHERE [Key] = @Key AND (ExpiresOn IS NULL OR ExpiresOn > GETUTCDATE());
+        """;
+        var exists = await connection.QueryFirstOrDefaultAsync<int?>(sql, new { Key = key.ToString() });
+        return exists.HasValue;
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\Extensions\ServiceCollectionExtensions.cs
+
+using CachingLibrary.Abstractions.Interfaces;
+using CachingLibrary.Infrastructure.Redis.Stores;
+using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
+namespace CachingLibrary.Infrastructure.Redis.Extensions;
+
+
+
+
+public static class ServiceCollectionExtensions
+{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static IServiceCollection AddRedisCacheStore<TKey, TValue>(
+        this IServiceCollection services,
+        string connectionString)
+        where TKey : notnull
+    {
+        
+        services.AddSingleton<IConnectionMultiplexer>(_ =>
+            ConnectionMultiplexer.Connect(connectionString));
+        
+        services.AddSingleton<ICacheStore<TKey, TValue>, RedisCacheStore<TKey, TValue>>();
+        return services;
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\obj\Debug\net8.0\CachingLibrary.Infrastructure.Redis.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("YourCompany")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Redis cache store implementation for CachingLibrary using StackExchange.Redis.")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Infrastructure.Redis")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Infrastructure.Redis")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https:
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\obj\Debug\net8.0\CachingLibrary.Infrastructure.Redis.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v9.0", FrameworkDisplayName = ".NET 9.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\obj\Debug\net9.0\CachingLibrary.Infrastructure.Redis.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("CachingLibrary.Infrastructure.Redis")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Infrastructure.Redis")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Infrastructure.Redis")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\obj\Debug\net9.0\CachingLibrary.Infrastructure.Redis.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\obj\Release\net8.0\CachingLibrary.Infrastructure.Redis.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("YourCompany")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Redis cache store implementation for CachingLibrary using StackExchange.Redis.")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Infrastructure.Redis")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Infrastructure.Redis")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https:
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\obj\Release\net8.0\CachingLibrary.Infrastructure.Redis.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Redis\Stores\RedisCacheStore.cs
+
+using System.Text.Json;
+using CachingLibrary.Abstractions.Interfaces;
+using StackExchange.Redis;
+namespace CachingLibrary.Infrastructure.Redis.Stores;
+
+
+
+
+
+
+
+
+
+
+public class RedisCacheStore<TKey, TValue>(IConnectionMultiplexer redis) : ICacheStore<TKey, TValue>
+    where TKey : notnull
+{
+    
+    private readonly IDatabase _db = redis.GetDatabase();
+    
+    
+    
+    
+    
+    
+    
+    public async Task SetAsync(TKey key, TValue value, TimeSpan? ttl = null)
+    {
+        var serialized = JsonSerializer.Serialize(value);
+        await _db.StringSetAsync(key.ToString(), serialized, ttl);
+    }
+    
+    
+    
+    
+    
+    
+    
+    public async Task<TValue?> GetAsync(TKey key)
+    {
+        var result = await _db.StringGetAsync(key.ToString());
+        return result.HasValue ? JsonSerializer.Deserialize<TValue>(result!) : default;
+    }
+    
+    
+    
+    
+    
+    
+    
+    public async Task<bool> RemoveAsync(TKey key)
+    {
+        return await _db.KeyDeleteAsync(key.ToString());
+    }
+    
+    
+    
+    
+    
+    
+    
+    public async Task<bool> ExistsAsync(TKey key)
+    {
+        return await _db.KeyExistsAsync(key.ToString());
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\Extensions\ServiceCollectionExtensions.cs
+
+using CachingLibrary.Abstractions.Interfaces;
+using CachingLibrary.Infrastructure.Memory.Stores;
+using Microsoft.Extensions.DependencyInjection;
+namespace CachingLibrary.Infrastructure.Memory.Extensions;
+
+
+
+
+public static class ServiceCollectionExtensions
+{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static IServiceCollection AddInMemoryCache<TKey, TValue>(this IServiceCollection services)
+        where TKey : notnull
+    {
+        services.AddMemoryCache(); 
+        services.AddSingleton<ICacheStore<TKey, TValue>, MemoryCacheStore<TKey, TValue>>();
+        return services;
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\obj\Debug\net8.0\CachingLibrary.Infrastructure.Memory.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("YourCompany")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("In-memory cache store implementation for CachingLibrary using Microsoft.Extension" +
+    "s.Caching.Memory.")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Infrastructure.Memory")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Infrastructure.Memory")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https:
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\obj\Debug\net8.0\CachingLibrary.Infrastructure.Memory.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v9.0", FrameworkDisplayName = ".NET 9.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\obj\Debug\net9.0\CachingLibrary.Infrastructure.Memory.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("CachingLibrary.Infrastructure.Memory")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Infrastructure.Memory")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Infrastructure.Memory")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\obj\Debug\net9.0\CachingLibrary.Infrastructure.Memory.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\obj\Release\net8.0\CachingLibrary.Infrastructure.Memory.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("YourCompany")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute(("In-memory cache store implementation for CachingLibrary using Microsoft.Extension" +
+    "s.Caching.Memory."))]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Infrastructure.Memory")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Infrastructure.Memory")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https:
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\obj\Release\net8.0\CachingLibrary.Infrastructure.Memory.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Infrastructure.Memory\Stores\MemoryCacheStore.cs
+
+using CachingLibrary.Abstractions.Interfaces;
+using Microsoft.Extensions.Caching.Memory;
+namespace CachingLibrary.Infrastructure.Memory.Stores;
+
+
+
+
+
+
+
+
+
+
+
+public class MemoryCacheStore<TKey, TValue>(IMemoryCache memoryCache) : ICacheStore<TKey, TValue>
+    where TKey : notnull
+{
+    
+    
+    
+    
+    
+    
+    
+    public Task SetAsync(TKey key, TValue value, TimeSpan? ttl = null)
+    {
+        var options = ttl.HasValue
+            ? new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = ttl }
+            : null;
+        memoryCache.Set(key, value, options);
+        return Task.CompletedTask;
+    }
+    
+    
+    
+    
+    
+    
+    
+    public Task<TValue?> GetAsync(TKey key)
+    {
+        memoryCache.TryGetValue(key, out TValue? value);
+        return Task.FromResult(value);
+    }
+    
+    
+    
+    
+    
+    
+    
+    public Task<bool> RemoveAsync(TKey key)
+    {
+        memoryCache.Remove(key);
+        return Task.FromResult(true);
+    }
+    
+    
+    
+    
+    
+    
+    
+    public Task<bool> ExistsAsync(TKey key)
+    {
+        return Task.FromResult(memoryCache.TryGetValue(key, out _));
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\Helpers\CacheConstants.cs
+
+using System;
+namespace CachingLibrary.Abstractions.Helpers
+{
+    public static class CacheConstants
+    {
+        public static readonly TimeSpan DefaultTtl = TimeSpan.FromMinutes(10);
+        public const int DefaultRedisBucketCount = 10000;
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\Helpers\CacheEntry.cs
+
+using System;
+namespace CachingLibrary.Abstractions.Helpers
+{
+    public class CacheEntry<T>
+    {
+        public T Value { get; set; } = default!;
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public DateTime? ExpiresOn { get; set; }
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\Helpers\JsonSerializerHelper.cs
+
+using System.Text.Json;
+namespace CachingLibrary.Abstractions.Helpers
+{
+    public static class JsonSerializerHelper
+    {
+        private static readonly JsonSerializerOptions Options = new(JsonSerializerDefaults.Web);
+        public static string Serialize<T>(T obj) => JsonSerializer.Serialize(obj, Options);
+        public static T? Deserialize<T>(string json) => JsonSerializer.Deserialize<T>(json, Options);
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\Helpers\KeyFormatter.cs
+
+using System.Linq;
+namespace CachingLibrary.Abstractions.Helpers;
+
+
+
+
+public static class KeyFormatter
+{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static string Format(params object[] segments)
+    {
+        return string.Join(":", segments
+            .Select(s => s?.ToString()?.ToLowerInvariant().Trim())
+            .Where(s => !string.IsNullOrWhiteSpace(s)));
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\Helpers\KeyValidator.cs
+
+using System;
+namespace CachingLibrary.Abstractions.Helpers
+{
+    public static class KeyValidator
+    {
+        public static void Validate(string key)
+        {
+            if (string.IsNullOrWhiteSpace(key))
+                throw new ArgumentException("Cache key cannot be null or empty.");
+            if (key.Length > 250)
+                throw new ArgumentException("Cache key exceeds maximum length (250 chars).");
+            
+        }
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\Helpers\TimeHelper.cs
+
+using System;
+namespace CachingLibrary.Abstractions.Helpers
+{
+    public static class TimeHelper
+    {
+        public static DateTime? CalculateExpiry(TimeSpan? ttl)
+            => ttl.HasValue ? DateTime.UtcNow.Add(ttl.Value) : null;
+        public static bool IsExpired(DateTime? expiresOn)
+            => expiresOn.HasValue && expiresOn.Value <= DateTime.UtcNow;
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\Interfaces\ICacheStore.cs
+
+using System;
+using System.Threading.Tasks;
+namespace CachingLibrary.Abstractions.Interfaces;
+
+
+
+
+
+public interface ICacheStore<in TKey, TValue>
+{
+    Task SetAsync(TKey key, TValue value, TimeSpan? ttl = null);
+    Task<TValue?> GetAsync(TKey key);
+    Task<bool> RemoveAsync(TKey key);
+    Task<bool> ExistsAsync(TKey key);
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\obj\Debug\net8.0\CachingLibrary.Abstractions.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("YourCompany")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Lightweight, pluggable caching abstractions for .NET applications.")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Abstractions")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Abstractions")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https:
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v9.0", FrameworkDisplayName = ".NET 9.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\obj\Debug\net9.0\CachingLibrary.Abstractions.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("CachingLibrary.Abstractions")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Abstractions")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Abstractions")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\obj\Debug\net9.0\CachingLibrary.Abstractions.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Abstractions\obj\Release\net8.0\CachingLibrary.Abstractions.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("YourCompany")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Lightweight, pluggable caching abstractions for .NET applications.")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Abstractions")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Abstractions")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https:
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\MemoryCacheStoreTests.cs
+
+using CachingLibrary.Infrastructure.Memory.Stores;
+using CachingLibrary.Tests.Models;
+using Microsoft.Extensions.Caching.Memory;
+namespace CachingLibrary.Tests;
+
+
+
+
+public class MemoryCacheStoreTests
+{
+    
+    
+    
+    private static MemoryCacheStore<string, SomeTestDto> CreateStore()
+    {
+        var memoryCache = new MemoryCache(new MemoryCacheOptions());
+        return new MemoryCacheStore<string, SomeTestDto>(memoryCache);
+    }
+    
+    
+    
+    private static string GetKey() => $"test:{Guid.NewGuid()}";
+    
+    
+    
+    [Fact]
+    public async Task SetAndGet_ShouldReturnSameValue()
+    {
+        var store = CreateStore();
+        var key = GetKey();
+        var dto = new SomeTestDto { Name = "sample", Count = 10 };
+        await store.SetAsync(key, dto);
+        var result = await store.GetAsync(key);
+        Assert.NotNull(result);
+        Assert.Equal(dto.Name, result.Name);
+        Assert.Equal(dto.Count, result.Count);
+    }
+    
+    
+    
+    [Fact]
+    public async Task Exists_ShouldReturnTrueIfPresent()
+    {
+        var store = CreateStore();
+        var key = GetKey();
+        await store.SetAsync(key, new SomeTestDto());
+        var exists = await store.ExistsAsync(key);
+        Assert.True(exists);
+    }
+    
+    
+    
+    [Fact]
+    public async Task Remove_ShouldDeleteEntry()
+    {
+        var store = CreateStore();
+        var key = GetKey();
+        await store.SetAsync(key, new SomeTestDto());
+        var removed = await store.RemoveAsync(key);
+        var result = await store.GetAsync(key);
+        Assert.True(removed);
+        Assert.Null(result);
+    }
+    
+    
+    
+    [Fact]
+    public async Task ExpiredItem_ShouldNotBeAvailable()
+    {
+        var store = CreateStore();
+        var key = GetKey();
+        await store.SetAsync(key, new SomeTestDto(), TimeSpan.FromMilliseconds(300));
+        await Task.Delay(500); 
+        var result = await store.GetAsync(key);
+        Assert.Null(result);
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\RedisCacheStoreTests.cs
+
+using CachingLibrary.Infrastructure.Redis.Stores;
+using CachingLibrary.Tests.Models;
+using StackExchange.Redis;
+namespace CachingLibrary.Tests;
+
+
+
+
+public class RedisCacheStoreTests
+{
+    
+    
+    
+    private static RedisCacheStore<string, SomeTestDto> CreateStore()
+    {
+        var connection = ConnectionMultiplexer.Connect("localhost:6379");
+        return new RedisCacheStore<string, SomeTestDto>(connection);
+    }
+    
+    
+    
+    private static string GetKey() => $"test:{Guid.NewGuid()}";
+    
+    
+    
+    [Fact]
+    public async Task SetAndGet_ShouldReturnSameValue()
+    {
+        var store = CreateStore();
+        var key = GetKey();
+        var value = new SomeTestDto { Name = "redis", Count = 10 };
+        await store.SetAsync(key, value);
+        var result = await store.GetAsync(key);
+        Assert.NotNull(result);
+        Assert.Equal(value.Name, result.Name);
+        Assert.Equal(value.Count, result.Count);
+    }
+    
+    
+    
+    [Fact]
+    public async Task Remove_ShouldDeleteValue()
+    {
+        var store = CreateStore();
+        var key = GetKey();
+        await store.SetAsync(key, new SomeTestDto());
+        var removed = await store.RemoveAsync(key);
+        var result = await store.GetAsync(key);
+        Assert.True(removed);
+        Assert.Null(result);
+    }
+    
+    
+    
+    [Fact]
+    public async Task Exists_ShouldReturnTrueIfKeyExists()
+    {
+        var store = CreateStore();
+        var key = GetKey();
+        await store.SetAsync(key, new SomeTestDto());
+        var exists = await store.ExistsAsync(key);
+        Assert.True(exists);
+    }
+    
+    
+    
+    [Fact]
+    public async Task ExpiredKey_ShouldNotBeAvailable()
+    {
+        var store = CreateStore();
+        var key = GetKey();
+        await store.SetAsync(key, new SomeTestDto(), TimeSpan.FromMilliseconds(300));
+        await Task.Delay(500); 
+        var result = await store.GetAsync(key);
+        Assert.Null(result);
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\SqlCacheStoreTests.cs
+
+using CachingLibrary.Infrastructure.Sql.Stores;
+using CachingLibrary.Tests.Models;
+using Microsoft.Data.SqlClient;
+namespace CachingLibrary.Tests;
+
+
+
+
+public class SqlCacheStoreTests
+{
+    
+    
+    
+    private const string ConnectionString = "Server=localhost;Database=RCS.Caching;User Id=sa;Password=Spooky58466!;TrustServerCertificate=True;";
+    
+    
+    
+    private static SqlCacheStore<string, SomeTestDto> CreateStore()
+    {
+        return new SqlCacheStore<string, SomeTestDto>(new SqlConnection(ConnectionString));
+    }
+    
+    
+    
+    private static string GetUniqueKey() => $"test:{Guid.NewGuid()}";
+    
+    
+    
+    [Fact]
+    public async Task SetAndGet_ShouldReturnSameValue()
+    {
+        var store = CreateStore();
+        var key = GetUniqueKey();
+        var value = new SomeTestDto { Name = "test", Count = 123 };
+        await store.SetAsync(key, value);
+        var fetched = await store.GetAsync(key, useSnapshotHint: true);
+        Assert.NotNull(fetched);
+        Assert.Equal(value.Name, fetched.Name);
+        Assert.Equal(value.Count, fetched.Count);
+    }
+    
+    
+    
+    [Fact]
+    public async Task Remove_ShouldDeleteValue()
+    {
+        var store = CreateStore();
+        var key = GetUniqueKey();
+        await store.SetAsync(key, new SomeTestDto { Name = "remove", Count = 1 });
+        var deleted = await store.RemoveAsync(key);
+        var result = await store.GetAsync(key, useSnapshotHint: true);
+        Assert.True(deleted);
+        Assert.Null(result);
+    }
+    
+    
+    
+    [Fact]
+    public async Task Exists_ShouldReturnTrueIfExists()
+    {
+        var store = CreateStore();
+        var key = GetUniqueKey();
+        await store.SetAsync(key, new SomeTestDto { Name = "exists", Count = 42 });
+        var exists = await store.ExistsAsync(key, useSnapshotHint: true);
+        Assert.True(exists);
+    }
+    
+    
+    
+    [Fact]
+    public async Task ExpiredKey_ShouldNotBeReturned()
+    {
+        var store = CreateStore();
+        var key = GetUniqueKey();
+        await store.SetAsync(key, new SomeTestDto { Name = "expire", Count = 999 }, TimeSpan.FromSeconds(1));
+        await Task.Delay(1500); 
+        var result = await store.GetAsync(key, useSnapshotHint: true);
+        Assert.Null(result);
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\Models\SomeTestDto.cs
+
+namespace CachingLibrary.Tests.Models;
+public class SomeTestDto
+{
+    public string Name { get; set; } = null!;
+    public int Count { get; set; }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\obj\Debug\net8.0\CachingLibrary.Tests.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("CachingLibrary.Tests")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Tests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Tests")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\obj\Debug\net8.0\CachingLibrary.Tests.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+global using global::Xunit;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v9.0", FrameworkDisplayName = ".NET 9.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\obj\Debug\net9.0\CachingLibrary.Tests.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("CachingLibrary.Tests")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Tests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Tests")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\obj\Debug\net9.0\CachingLibrary.Tests.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+global using global::Xunit;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\obj\Release\net8.0\CachingLibrary.Tests.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("CachingLibrary.Tests")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.Tests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.Tests")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.Tests\obj\Release\net8.0\CachingLibrary.Tests.GlobalUsings.g.cs
+
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+global using global::Xunit;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\Program.cs
+
+using CachingLibrary.Infrastructure.Memory.Extensions;
+using CachingLibrary.Infrastructure.Memory.Stores;
+using CachingLibrary.Infrastructure.Redis.Extensions;
+using CachingLibrary.Infrastructure.Redis.Stores;
+using CachingLibrary.Infrastructure.Sql.Extensions;
+using CachingLibrary.Infrastructure.Sql.Stores;
+using CachingLibrary.Tests.Models;
+using CachingLibrary.WebApi.Resolvers;
+using Microsoft.AspNetCore.Mvc;
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddInMemoryCache<string, SomeTestDto>();
+builder.Services.AddSqlCacheStore<string, SomeTestDto>("Server=localhost;Database=RCS.Caching;User Id=sa;Password=Spooky58466!;TrustServerCertificate=True;");
+builder.Services.AddRedisCacheStore<string, SomeTestDto>("localhost:6379");
+
+builder.Services.AddSingleton<MemoryCacheStore<string, SomeTestDto>>();
+builder.Services.AddSingleton<RedisCacheStore<string, SomeTestDto>>();
+builder.Services.AddScoped<SqlCacheStore<string, SomeTestDto>>();
+
+builder.Services.AddSingleton<CacheStoreResolver<string, SomeTestDto>>();
+var app = builder.Build();
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Caching API v1");
+});
+
+app.MapGet("/", () => Results.Redirect("/swagger"));
+
+app.MapPost("/cache/{store}/{key}", async (
+    [FromRoute] string store,
+    [FromRoute] string key,
+    [FromBody] SomeTestDto dto,
+    [FromServices] CacheStoreResolver<string, SomeTestDto> resolver) =>
+{
+    var cache = resolver.Resolve(store);
+    await cache.SetAsync(key, dto);
+    return Results.Ok("Stored.");
+});
+
+app.MapGet("/cache/{store}/{key}", async (
+    [FromRoute] string store,
+    [FromRoute] string key,
+    [FromServices] CacheStoreResolver<string, SomeTestDto> resolver) =>
+{
+    var cache = resolver.Resolve(store);
+    var value = await cache.GetAsync(key);
+    return value is not null ? Results.Ok(value) : Results.NotFound();
+});
+
+app.MapDelete("/cache/{store}/{key}", async (
+    [FromRoute] string store,
+    [FromRoute] string key,
+    [FromServices] CacheStoreResolver<string, SomeTestDto> resolver) =>
+{
+    var cache = resolver.Resolve(store);
+    var removed = await cache.RemoveAsync(key);
+    return removed ? Results.Ok("Removed.") : Results.NotFound();
+});
+
+app.MapMethods("/cache/{store}/{key}", ["HEAD"], async (
+    [FromRoute] string store,
+    [FromRoute] string key,
+    [FromServices] CacheStoreResolver<string, SomeTestDto> resolver) =>
+{
+    var cache = resolver.Resolve(store);
+    var exists = await cache.ExistsAsync(key);
+    return exists ? Results.Ok() : Results.NotFound();
+});
+app.Run();
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v9.0", FrameworkDisplayName = ".NET 9.0")]
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\obj\Debug\net9.0\CachingLibrary.WebApi.AssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("CachingLibrary.WebApi")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("CachingLibrary.WebApi")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CachingLibrary.WebApi")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\obj\Debug\net9.0\CachingLibrary.WebApi.GlobalUsings.g.cs
+
+
+global using global::Microsoft.AspNetCore.Builder;
+global using global::Microsoft.AspNetCore.Hosting;
+global using global::Microsoft.AspNetCore.Http;
+global using global::Microsoft.AspNetCore.Routing;
+global using global::Microsoft.Extensions.Configuration;
+global using global::Microsoft.Extensions.DependencyInjection;
+global using global::Microsoft.Extensions.Hosting;
+global using global::Microsoft.Extensions.Logging;
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Net.Http.Json;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\obj\Debug\net9.0\CachingLibrary.WebApi.MvcApplicationPartsAssemblyInfo.cs
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection;
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("Swashbuckle.AspNetCore.SwaggerGen")]
+
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\Resolvers\CacheStoreResolver.cs
+
+using CachingLibrary.Abstractions.Interfaces;
+using CachingLibrary.Infrastructure.Memory.Stores;
+using CachingLibrary.Infrastructure.Redis.Stores;
+using CachingLibrary.Infrastructure.Sql.Stores;
+namespace CachingLibrary.WebApi.Resolvers;
+public class CacheStoreResolver<TKey, TValue>(IServiceProvider provider)
+    where TKey : notnull
+{
+    public ICacheStore<TKey, TValue> Resolve(string store)
+    {
+        return store.ToLowerInvariant() switch
+        {
+            "memory" => provider.GetRequiredService<MemoryCacheStore<TKey, TValue>>(),
+            "sql"    => provider.GetRequiredService<SqlCacheStore<TKey, TValue>>(),
+            "redis"  => provider.GetRequiredService<RedisCacheStore<TKey, TValue>>(),
+            _ => throw new ArgumentException($"Unknown cache store: {store}")
+        };
+    }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\bin\Debug\net9.0\Config\appsettings.Development.json
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\bin\Debug\net9.0\Config\appsettings.json
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\Config\appsettings.Development.json
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}
+
+// File: C:\Projects\RCS\RCS.CachingLibrary\CachingLibrary.WebApi\Config\appsettings.json
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}

@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Infrastructure.Sql", "RCS.Caching.Infrastructure.Sql\RCS.Caching.Infrastructure.Sql.csproj", "{334E1A81-A736-4616-A588-DD31A5F02C02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Infrastructure.Redis", "RCS.Caching.Infrastructure.Redis\RCS.Caching.Infrastructure.Redis.csproj", "{1DB67B75-BCAA-4906-9301-DAF78A7BE1E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Infrastructure.Memory", "RCS.Caching.Infrastructure.Memory\RCS.Caching.Infrastructure.Memory.csproj", "{782340CC-2FCE-4001-B915-3B1DD2FC2E0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Abstractions", "RCS.Caching.Abstractions\RCS.Caching.Abstractions.csproj", "{A0F41E02-54A5-4B5A-882A-52597DBCC4C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Tests", "RCS.Caching.Tests\RCS.Caching.Tests.csproj", "{1274209C-A35A-4ED0-B59D-6FB3B1C3A519}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{376C4223-BEEA-497A-9507-D87098825AF2}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{194E6C01-1CEB-454E-9CA8-F91157AFDFFE}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\PowerShell\ExtractEachProjectsCodeForChatGPT.ps1 = Solution Items\PowerShell\ExtractEachProjectsCodeForChatGPT.ps1
+		Solution Items\PowerShell\ExtractSolutionCodeForChatGPT.ps1 = Solution Items\PowerShell\ExtractSolutionCodeForChatGPT.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.WebApi", "RCS.Caching.WebApi\RCS.Caching.WebApi.csproj", "{10737C77-5B26-4335-8F2B-8ED755B9F321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.WebApi.Tests", "RCS.Caching.WebApi.Tests\RCS.Caching.WebApi.Tests.csproj", "{17F6134C-BF55-461D-87F5-1982F7B43C15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{334E1A81-A736-4616-A588-DD31A5F02C02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{334E1A81-A736-4616-A588-DD31A5F02C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{334E1A81-A736-4616-A588-DD31A5F02C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{334E1A81-A736-4616-A588-DD31A5F02C02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DB67B75-BCAA-4906-9301-DAF78A7BE1E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB67B75-BCAA-4906-9301-DAF78A7BE1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB67B75-BCAA-4906-9301-DAF78A7BE1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB67B75-BCAA-4906-9301-DAF78A7BE1E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{782340CC-2FCE-4001-B915-3B1DD2FC2E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{782340CC-2FCE-4001-B915-3B1DD2FC2E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{782340CC-2FCE-4001-B915-3B1DD2FC2E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{782340CC-2FCE-4001-B915-3B1DD2FC2E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F41E02-54A5-4B5A-882A-52597DBCC4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F41E02-54A5-4B5A-882A-52597DBCC4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F41E02-54A5-4B5A-882A-52597DBCC4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F41E02-54A5-4B5A-882A-52597DBCC4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1274209C-A35A-4ED0-B59D-6FB3B1C3A519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1274209C-A35A-4ED0-B59D-6FB3B1C3A519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1274209C-A35A-4ED0-B59D-6FB3B1C3A519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1274209C-A35A-4ED0-B59D-6FB3B1C3A519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10737C77-5B26-4335-8F2B-8ED755B9F321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10737C77-5B26-4335-8F2B-8ED755B9F321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10737C77-5B26-4335-8F2B-8ED755B9F321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10737C77-5B26-4335-8F2B-8ED755B9F321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F6134C-BF55-461D-87F5-1982F7B43C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F6134C-BF55-461D-87F5-1982F7B43C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F6134C-BF55-461D-87F5-1982F7B43C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F6134C-BF55-461D-87F5-1982F7B43C15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{194E6C01-1CEB-454E-9CA8-F91157AFDFFE} = {376C4223-BEEA-497A-9507-D87098825AF2}
+	EndGlobalSection
+EndGlobal

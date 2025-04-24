@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.4" />
+    <PackageReference Include="StackExchange.Redis" Version="2.8.31" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RCS.Caching.Abstractions\RCS.Caching.Abstractions.csproj" />
+    <ProjectReference Include="..\RCS.Caching.Infrastructure.Memory\RCS.Caching.Infrastructure.Memory.csproj" />
+    <ProjectReference Include="..\RCS.Caching.Infrastructure.Redis\RCS.Caching.Infrastructure.Redis.csproj" />
+    <ProjectReference Include="..\RCS.Caching.Infrastructure.Sql\RCS.Caching.Infrastructure.Sql.csproj" />
+    <ProjectReference Include="..\RCS.Caching.Tests\RCS.Caching.Tests.csproj" />
+  </ItemGroup>
+
+</Project>

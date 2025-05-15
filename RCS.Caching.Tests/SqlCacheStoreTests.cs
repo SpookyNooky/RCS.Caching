@@ -13,7 +13,7 @@ public class SqlCacheStoreTests
     /// <summary>
     /// SQL Server connection string pointing to a test database with memory-optimized table support.
     /// </summary>
-    private const string ConnectionString = "Server=localhost;Database=RCS.Caching;User Id=sa;Password=Spooky58466!;TrustServerCertificate=True;";
+    private const string ConnectionString = "Server=localhost;Database=RCS.Caching;User Id=sa;Password=*******;TrustServerCertificate=True;";
 
     /// <summary>
     /// Instantiates a new <see cref="SqlCacheStore{TKey, TValue}"/> for isolated test runs.

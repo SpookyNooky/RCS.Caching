@@ -28,6 +28,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.WebApi", "RCS.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.WebApi.Tests", "RCS.Caching.WebApi.Tests\RCS.Caching.WebApi.Tests.csproj", "{17F6134C-BF55-461D-87F5-1982F7B43C15}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts", "{B2D2EE90-08BE-4103-B430-0F0498210891}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\SQL Scripts\CacheEntries.sql = Solution Items\SQL Scripts\CacheEntries.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,5 +73,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{194E6C01-1CEB-454E-9CA8-F91157AFDFFE} = {376C4223-BEEA-497A-9507-D87098825AF2}
+		{B2D2EE90-08BE-4103-B430-0F0498210891} = {376C4223-BEEA-497A-9507-D87098825AF2}
 	EndGlobalSection
 EndGlobal

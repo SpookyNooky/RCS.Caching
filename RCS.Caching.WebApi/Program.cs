@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 
 // Register all cache implementations (interfaces)
 builder.Services.AddInMemoryCache<string, SomeTestDto>();
-builder.Services.AddSqlCacheStore<string, SomeTestDto>("Server=localhost;Database=RCS.Caching;User Id=sa;Password=Spooky58466!;TrustServerCertificate=True;");
+builder.Services.AddSqlCacheStore<string, SomeTestDto>("Server=localhost;Database=RCS.Caching;User Id=sa;Password=*******;TrustServerCertificate=True;");
 builder.Services.AddRedisCacheStore<string, SomeTestDto>("localhost:6379");
 
 // Explicitly register concrete implementations for resolver

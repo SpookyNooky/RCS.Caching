@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Infrastructure.Sql", "RCS.Caching.Infrastructure.Sql\RCS.Caching.Infrastructure.Sql.csproj", "{334E1A81-A736-4616-A588-DD31A5F02C02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCS.Caching.Infrastructure.Sql", "RCS.Caching.Infrastructure.Sql\RCS.Caching.Infrastructure.Sql.csproj", "{334E1A81-A736-4616-A588-DD31A5F02C02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Infrastructure.Redis", "RCS.Caching.Infrastructure.Redis\RCS.Caching.Infrastructure.Redis.csproj", "{1DB67B75-BCAA-4906-9301-DAF78A7BE1E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCS.Caching.Infrastructure.Redis", "RCS.Caching.Infrastructure.Redis\RCS.Caching.Infrastructure.Redis.csproj", "{1DB67B75-BCAA-4906-9301-DAF78A7BE1E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Infrastructure.Memory", "RCS.Caching.Infrastructure.Memory\RCS.Caching.Infrastructure.Memory.csproj", "{782340CC-2FCE-4001-B915-3B1DD2FC2E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCS.Caching.Infrastructure.Memory", "RCS.Caching.Infrastructure.Memory\RCS.Caching.Infrastructure.Memory.csproj", "{782340CC-2FCE-4001-B915-3B1DD2FC2E0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Abstractions", "RCS.Caching.Abstractions\RCS.Caching.Abstractions.csproj", "{A0F41E02-54A5-4B5A-882A-52597DBCC4C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCS.Caching.Abstractions", "RCS.Caching.Abstractions\RCS.Caching.Abstractions.csproj", "{A0F41E02-54A5-4B5A-882A-52597DBCC4C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.Tests", "RCS.Caching.Tests\RCS.Caching.Tests.csproj", "{1274209C-A35A-4ED0-B59D-6FB3B1C3A519}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCS.Caching.Tests", "RCS.Caching.Tests\RCS.Caching.Tests.csproj", "{1274209C-A35A-4ED0-B59D-6FB3B1C3A519}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{376C4223-BEEA-497A-9507-D87098825AF2}"
 	ProjectSection(SolutionItems) = preProject
@@ -24,9 +24,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", 
 		Solution Items\PowerShell\ExtractSolutionCodeForChatGPT.ps1 = Solution Items\PowerShell\ExtractSolutionCodeForChatGPT.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.WebApi", "RCS.Caching.WebApi\RCS.Caching.WebApi.csproj", "{10737C77-5B26-4335-8F2B-8ED755B9F321}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCS.Caching.WebApi", "RCS.Caching.WebApi\RCS.Caching.WebApi.csproj", "{10737C77-5B26-4335-8F2B-8ED755B9F321}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.WebApi.Tests", "RCS.Caching.WebApi.Tests\RCS.Caching.WebApi.Tests.csproj", "{17F6134C-BF55-461D-87F5-1982F7B43C15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCS.Caching.WebApi.Tests", "RCS.Caching.WebApi.Tests\RCS.Caching.WebApi.Tests.csproj", "{17F6134C-BF55-461D-87F5-1982F7B43C15}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts", "{B2D2EE90-08BE-4103-B430-0F0498210891}"
 	ProjectSection(SolutionItems) = preProject

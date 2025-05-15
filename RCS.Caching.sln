@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCS.Caching.WebApi.Tests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts", "{B2D2EE90-08BE-4103-B430-0F0498210891}"
 	ProjectSection(SolutionItems) = preProject
-		Solution Items\SQL Scripts\CacheEntries.sql = Solution Items\SQL Scripts\CacheEntries.sql
+		Solution Items\SQL Scripts\CreateCacheEntries.sql = Solution Items\SQL Scripts\CreateCacheEntries.sql
 	EndProjectSection
 EndProject
 Global

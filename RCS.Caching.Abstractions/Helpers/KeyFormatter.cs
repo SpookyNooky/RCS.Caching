@@ -29,7 +29,7 @@ public static class KeyFormatter
     public static string Format(params object[] segments)
     {
         return string.Join(":", segments
-            .Select(s => s?.ToString()?.ToLowerInvariant().Trim())
+            .Select(s => s.ToString()?.ToLowerInvariant().Trim())
             .Where(s => !string.IsNullOrWhiteSpace(s)));
     }
 }
